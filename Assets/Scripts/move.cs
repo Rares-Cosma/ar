@@ -1,9 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class move : MonoBehaviour
 {
+    public GameLogic manager;
+
     public float speed = 1f;       // Movement speed
     public float attackDistance = 1.5f;
     public float attackDelay = 0.5f;
@@ -14,7 +17,17 @@ public class move : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Scene scene = SceneManager.GetActiveScene();
+        GameObject[] objects = scene.GetRootGameObjects();
+
+        foreach (var obj in objects)
+        {
+            if (obj.GetComponent<GameLogic>() != null)
+            {
+                manager = obj.GetComponent<GameLogic>();
+                break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -58,7 +71,10 @@ public class move : MonoBehaviour
             int animNum = (int)Random.Range(0,3);
             anim.SetFloat("Random",animNum);
             anim.CrossFadeInFixedTime("Attack",0.25f);
-            yield return new WaitForSeconds(attackDelay);
+            float animLength = anim.GetCurrentAnimatorStateInfo(0).length;
+            yield return new WaitForSeconds(animLength/2);
+            manager.healthSystem.health -= 15;
+            yield return new WaitForSeconds(attackDelay-animLength/2);
         }
     }
 }
