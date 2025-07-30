@@ -13,9 +13,14 @@ PrefabInstance:
       propertyPath: m_MinScale
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3148557967192698311, guid: 894d54703eb1549009ad9f909fc154d7,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4517597861620706814, guid: 894d54703eb1549009ad9f909fc154d7,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 83eabfe673263a445972586e5d8b56ee, type: 2}
     - target: {fileID: 5020066889803225253, guid: 894d54703eb1549009ad9f909fc154d7,
