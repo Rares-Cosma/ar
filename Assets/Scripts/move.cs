@@ -7,6 +7,7 @@ public class move : MonoBehaviour
 {
     public GameLogic manager;
 
+    public float health = 2;
     public float speed = 1f;       // Movement speed
     public float attackDistance = 1.5f;
     public float attackDelay = 0.5f;
@@ -37,7 +38,8 @@ public class move : MonoBehaviour
         Transform playerTransform = Camera.main.transform;
         Vector3 direction = (playerTransform.position - transform.position);
         direction = new Vector3(direction.x,0,direction.z);
-        
+        transform.forward = direction;
+
         if(direction.magnitude < attackDistance)
         {
             running = false;
@@ -58,7 +60,6 @@ public class move : MonoBehaviour
                 anim.CrossFadeInFixedTime("Idle",.25f);
             }
             transform.position += direction.normalized * speed * Time.deltaTime;
-            transform.forward = direction;
             anim.SetFloat("Speed",speed);
         }
     }
