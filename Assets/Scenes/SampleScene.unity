@@ -517,7 +517,7 @@ MonoBehaviour:
   anim: {fileID: 2129159}
   flash: {fileID: 1080615233}
   canShoot: 1
-  delay: 0.6
+  delay: 0.5
 --- !u!1 &208261302
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &208261303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1230,7 +1230,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlanePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1585201990951412, guid: a6b7ca1d53c75490595d1f0d5f43be38,
+        type: 3}
     - target: {fileID: 2512387470528047737, guid: 48cb3fb68c91eb94999fd99957eb0cae,
         type: 3}
       propertyPath: m_DetectionMode
@@ -2447,7 +2448,7 @@ PrefabInstance:
     - target: {fileID: 3513894623741162238, guid: e3057ec6e531de74db68b6264b873913,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3981009590265482622, guid: e3057ec6e531de74db68b6264b873913,
         type: 3}
@@ -12279,79 +12280,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939512505}
   m_CullTransparentMesh: 1
---- !u!1001 &1949914836
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1099930192231860231, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290641143173014999, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d95e2fab6e7383d4f839950243bd3e18, type: 2}
-    - target: {fileID: 5598639415702750726, guid: cba874889bda19b4ab71142f17621311,
-        type: 3}
-      propertyPath: m_Name
-      value: Grass
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cba874889bda19b4ab71142f17621311, type: 3}
 --- !u!1 &1962116422
 GameObject:
   m_ObjectHideFlags: 0
@@ -12671,7 +12599,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
@@ -14333,6 +14261,5 @@ SceneRoots:
   - {fileID: 1075000276}
   - {fileID: 1323550134}
   - {fileID: 2099970469}
-  - {fileID: 1949914836}
   - {fileID: 331264285}
   - {fileID: 3714743473486339165}
