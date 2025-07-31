@@ -74,7 +74,8 @@ public class move : MonoBehaviour
             anim.CrossFadeInFixedTime("Attack",0.25f);
             float animLength = anim.GetCurrentAnimatorStateInfo(0).length;
             yield return new WaitForSeconds(animLength/2);
-            manager.healthSystem.health -= 15;
+            if(attacking == true)
+                manager.healthSystem.health -= 15;
             yield return new WaitForSeconds(attackDelay-animLength/2);
         }
     }
