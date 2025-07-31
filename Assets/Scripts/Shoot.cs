@@ -27,7 +27,7 @@ public class Shoot : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(cam.position,cam.forward,out hit, 20))
             {
-                if(hit.transform.gameObject.tag == "Sahur")
+                if(hit.transform.gameObject.tag == "Sahur" || hit.transform.gameObject.tag == "brr brr patapim (1)")
                 {
                     move sahur = hit.transform.gameObject.GetComponent<move>();
                     sahur.health -= 1;

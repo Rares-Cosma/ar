@@ -6,7 +6,7 @@ public class GameLogic : MonoBehaviour
 {
     public Health healthSystem;
 
-    public GameObject sahur;  
+    public List<GameObject> sahurPrefabs;
 
     public float spawnRange;
     public float spawnDelay;
@@ -15,7 +15,7 @@ public class GameLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(Spawn());
+        //StartCoroutine(Spawn());
     }
 
     // Update is called once per frame
@@ -25,13 +25,26 @@ public class GameLogic : MonoBehaviour
     }
 
     IEnumerator Spawn()
+{
+    while (true)
     {
-        while(true)
+        // Get AR camera position
+        Vector3 camPos = Camera.main.transform.position;
+
+        // Pick a random direction and position in XZ plane
+        Vector2 dir = Random.insideUnitCircle.normalized;
+        Vector3 offset = new Vector3(dir.x, 0, dir.y) * spawnRange;
+
+        // Set spawn Y position slightly below camera to keep it grounded
+        Vector3 spawnPos = new Vector3(camPos.x + offset.x, camPos.y - 0.1f, camPos.z + offset.z);
+
+        if (sahurPrefabs.Count > 0)
         {
-            Vector2 dir = Random.insideUnitCircle.normalized;
-            Vector3 spawnPos = new Vector3(dir.x,0,dir.y).normalized;
-            Instantiate(sahur,spawnPos,Quaternion.identity);
-            yield return new WaitForSeconds(spawnDelay);
+            int index = Random.Range(0, sahurPrefabs.Count);
+            Instantiate(sahurPrefabs[index], spawnPos, Quaternion.identity);
         }
+
+        yield return new WaitForSeconds(spawnDelay);
     }
+}
 }

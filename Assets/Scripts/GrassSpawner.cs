@@ -5,7 +5,7 @@ public class GrassSpawner : MonoBehaviour
     [Header("Settings")]
     public Color sampledColor;          // Input: current sampled color (set from your other script)
     GrassDetector grassDetector;
-    [Range(0f, 1f)] public float greenThreshold = 0.4f; // Min green intensity normalized (0 to 1)
+    [Range(0f, 1f)] public float greenThreshold = 0.25f; // Min green intensity normalized (0 to 1)
     public int grassCount = 10;         // Number of grass objects to spawn
     public float spawnRadius = 3f;      // Radius around center point to spawn grass
     public GameObject grassPrefab;      // Prefab of grass to spawn
